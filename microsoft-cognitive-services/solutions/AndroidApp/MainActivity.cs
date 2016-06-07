@@ -107,8 +107,9 @@ namespace AndroidApp
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
 
                     //Get and display the happiness score
-                    float result = await Core.GetAverageHappinessScore(stream);
-                    _resultTextView.Text = Core.GetHappinessMessage(result);
+                    //float result = await Core.GetAverageHappinessScore(stream);
+                    //_resultTextView.Text = Core.GetHappinessMessage(result);
+                    _resultTextView.Text =await Core.GetVerboseEmotionString(stream);
                 }
             }
             catch (Exception ex)
